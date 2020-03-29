@@ -19,10 +19,10 @@ int allocate_pid()
     		if(array[i]==0)   
     		{
       			array[i]=1;     
-      			return (i+100);        
+      			return (i+100);     /* returns pid to the thread */   
     		}
   	}
-  	return 1;                
+  	return 1;           /* returns 1 if pid is not returned */     
 }
 
 int allocate_map(void )        
@@ -40,9 +40,9 @@ int allocate_map(void )
     		count++;
   	}
 	if(count==MAX_PID - MIN_PID)
-	return 0;
+	return 0;			/* returns 0 if bitmap is successfully initialized */
 	else
-	return 1;               
+	return 1;               	/* returns 1 if bitmap is not initialized */ 
 }
 
 void release_pid(int pid)
