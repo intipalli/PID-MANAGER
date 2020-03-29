@@ -114,8 +114,11 @@ int main()
 	int x;
 	printf("\n\t\t\t*****PID MANAGER*****")
   	printf("\nEnter no of threads:\t");
-  	scanf("%d",&threads);               
-  	x = allocate_map();                   
+  	scanf("%d",&threads); 
+	if(threads>0)
+  	x = allocate_map();
+	else
+	printf("\nInvalid input");
   	if(x==0)                                  
 	printf("\n\t\tBitmap is initialized...");
   	else
